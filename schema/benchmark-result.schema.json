@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/redwoodjs/sourdough-benchmarks/schema/benchmark-result.schema.json",
+  "title": "Sourdough benchmark comparison",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "source",
+    "environment",
+    "policy",
+    "summary",
+    "benchmarks"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "source": {
+      "type": "object",
+      "required": ["repository", "baseSha", "headSha", "runId"],
+      "properties": {
+        "repository": { "const": "redwoodjs/sourdough" },
+        "pullRequest": { "type": ["integer", "null"], "minimum": 1 },
+        "baseSha": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+        "headSha": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+        "runId": { "type": "string", "minLength": 1 },
+        "runAttempt": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": true
+    },
+    "environment": {
+      "type": "object",
+      "required": ["node", "platform", "architecture", "cpu"],
+      "properties": {
+        "node": { "type": "string" },
+        "platform": { "type": "string" },
+        "architecture": { "type": "string" },
+        "cpu": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "policy": {
+      "type": "object",
+      "required": ["rounds", "defaultMaxRegressionPercent"],
+      "properties": {
+        "rounds": { "type": "integer", "minimum": 2 },
+        "defaultMaxRegressionPercent": { "type": "number", "minimum": 0 }
+      },
+      "additionalProperties": true
+    },
+    "summary": {
+      "type": "object",
+      "required": ["passed", "regressions", "warnings", "added", "removed"],
+      "properties": {
+        "passed": { "type": "boolean" },
+        "regressions": { "type": "integer", "minimum": 0 },
+        "warnings": { "type": "integer", "minimum": 0 },
+        "added": { "type": "integer", "minimum": 0 },
+        "removed": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": true
+    },
+    "benchmarks": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["status"],
+        "properties": {
+          "status": {
+            "enum": ["passed", "warning", "regression", "added", "removed"]
+          },
+          "baseMedianMs": { "type": "number", "exclusiveMinimum": 0 },
+          "headMedianMs": { "type": "number", "exclusiveMinimum": 0 },
+          "changePercent": { "type": "number" },
+          "maxRegressionPercent": { "type": "number", "minimum": 0 },
+          "baseRoundsMs": {
+            "type": "array",
+            "items": { "type": "number", "exclusiveMinimum": 0 }
+          },
+          "headRoundsMs": {
+            "type": "array",
+            "items": { "type": "number", "exclusiveMinimum": 0 }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
