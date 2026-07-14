@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "repository": "redwoodjs/sourdough",
+    "pullRequest": 4,
+    "baseSha": "a94575f75d2b6d7fcfdb73bb30b2176ba6dff7b7",
+    "headSha": "0c45b886c260c480d6ad6ec5bb07cfcc027111ac",
+    "runId": "29325087252",
+    "runAttempt": "1",
+    "createdAt": "2026-07-14T10:23:17.771Z"
+  },
+  "environment": {
+    "node": "v24.18.0",
+    "platform": "linux 6.17.0-1018-azure",
+    "architecture": "x64",
+    "cpu": "AMD EPYC 7763 64-Core Processor",
+    "cpuCount": 4
+  },
+  "policy": {
+    "rounds": 2,
+    "schedule": [
+      "base",
+      "head",
+      "head",
+      "base"
+    ],
+    "defaultMaxRegressionPercent": 10,
+    "noisyResultsBecomeWarnings": true,
+    "removedBenchmarksFail": true
+  },
+  "summary": {
+    "passed": true,
+    "regressions": 0,
+    "warnings": 0,
+    "added": 0,
+    "removed": 0
+  },
+  "benchmarks": {
+    "durable-object/adapter/id-from-name": {
+      "status": "passed",
+      "baseMedianMs": 0.0016180000002350425,
+      "headMedianMs": 0.0016329999998561107,
+      "changePercent": 0.9270704338003163,
+      "maxRegressionPercent": 10,
+      "baseRoundsMs": [
+        0.001592999999957101,
+        0.0016430000005129841
+      ],
+      "headRoundsMs": [
+        0.001623000000108732,
+        0.0016429999996034894
+      ],
+      "rangesSeparated": false
+    },
+    "durable-object/node/coordinator-activate-in-memory": {
+      "status": "passed",
+      "baseMedianMs": 0.0018784999999752472,
+      "headMedianMs": 0.0018634999998994317,
+      "changePercent": -0.7985094530749604,
+      "maxRegressionPercent": 20,
+      "baseRoundsMs": [
+        0.0018829999999070424,
+        0.001874000000043452
+      ],
+      "headRoundsMs": [
+        0.001874000000043452,
+        0.0018529999997554114
+      ],
+      "rangesSeparated": false
+    },
+    "durable-object/node/coordinator-get-cached": {
+      "status": "passed",
+      "baseMedianMs": 0.0004209999999602587,
+      "headMedianMs": 0.00043099999993501115,
+      "changePercent": 2.375296906341188,
+      "maxRegressionPercent": 10,
+      "baseRoundsMs": [
+        0.0004209999999602587,
+        0.0004209999999602587
+      ],
+      "headRoundsMs": [
+        0.00043099999993501115,
+        0.00043099999993501115
+      ],
+      "rangesSeparated": true
+    },
+    "durable-object/node/fetch-noop": {
+      "status": "passed",
+      "baseMedianMs": 0.00412249999976666,
+      "headMedianMs": 0.004083000000036918,
+      "changePercent": -0.9581564519582194,
+      "maxRegressionPercent": 10,
+      "baseRoundsMs": [
+        0.00414699999964796,
+        0.00409799999988536
+      ],
+      "headRoundsMs": [
+        0.00409799999988536,
+        0.004068000000188476
+      ],
+      "rangesSeparated": false
+    },
+    "durable-object/node/router-dispatch": {
+      "status": "passed",
+      "baseMedianMs": 0.005786000000171043,
+      "headMedianMs": 0.005805999999665801,
+      "changePercent": 0.3456619338777441,
+      "maxRegressionPercent": 10,
+      "baseRoundsMs": [
+        0.005871000000297499,
+        0.005701000000044587
+      ],
+      "headRoundsMs": [
+        0.005790999999589985,
+        0.005820999999741616
+      ],
+      "rangesSeparated": false
+    },
+    "durable-object/node/rpc-noop": {
+      "status": "passed",
+      "baseMedianMs": 0.0011770000000979053,
+      "headMedianMs": 0.0011669999994410318,
+      "changePercent": -0.849617727786035,
+      "maxRegressionPercent": 10,
+      "baseRoundsMs": [
+        0.001172000000224216,
+        0.0011819999999715947
+      ],
+      "headRoundsMs": [
+        0.0011619999986578478,
+        0.001172000000224216
+      ],
+      "rangesSeparated": false
+    },
+    "durable-object/node/storage-kv-roundtrip": {
+      "status": "passed",
+      "baseMedianMs": 1.0424127500000395,
+      "headMedianMs": 0.9759812500001317,
+      "changePercent": -6.3728595031004085,
+      "maxRegressionPercent": 10,
+      "baseRoundsMs": [
+        1.097139999999854,
+        0.9876855000002251
+      ],
+      "headRoundsMs": [
+        0.9766845000003741,
+        0.9752779999998893
+      ],
+      "rangesSeparated": false
+    },
+    "durable-object/node/storage-list-100": {
+      "status": "passed",
+      "baseMedianMs": 0.22483950000014374,
+      "headMedianMs": 0.22615449999989323,
+      "changePercent": 0.5848616456399556,
+      "maxRegressionPercent": 10,
+      "baseRoundsMs": [
+        0.22694400000000314,
+        0.22273500000028434
+      ],
+      "headRoundsMs": [
+        0.22419399999989764,
+        0.22811499999988882
+      ],
+      "rangesSeparated": false
+    },
+    "durable-object/node/storage-sql-write": {
+      "status": "passed",
+      "baseMedianMs": 0.9898670000000038,
+      "headMedianMs": 0.9938747500000318,
+      "changePercent": 0.40487762497668256,
+      "maxRegressionPercent": 25,
+      "baseRoundsMs": [
+        0.9907359999997425,
+        0.9889980000002652
+      ],
+      "headRoundsMs": [
+        0.9899795000001177,
+        0.9977699999999459
+      ],
+      "rangesSeparated": false
+    },
+    "r2/adapter/head": {
+      "status": "passed",
+      "baseMedianMs": 0.00038549999993620077,
+      "headMedianMs": 0.0003855000000498876,
+      "changePercent": 2.9490749089605943e-8,
+      "maxRegressionPercent": 10,
+      "baseRoundsMs": [
+        0.0003909999999223146,
+        0.00037999999995008693
+      ],
+      "headRoundsMs": [
+        0.00038000000006377377,
+        0.00039100000003600144
+      ],
+      "rangesSeparated": false
+    },
+    "r2/node/get-1-kib": {
+      "status": "passed",
+      "baseMedianMs": 0.46663074999992205,
+      "headMedianMs": 0.4938005000000203,
+      "changePercent": 5.822537413169361,
+      "maxRegressionPercent": 10,
+      "baseRoundsMs": [
+        0.4626839999996264,
+        0.4705775000002177
+      ],
+      "headRoundsMs": [
+        0.48657200000002376,
+        0.5010290000000168
+      ],
+      "rangesSeparated": true
+    },
+    "r2/node/head": {
+      "status": "passed",
+      "baseMedianMs": 0.19596249999983684,
+      "headMedianMs": 0.19730699999990975,
+      "changePercent": 0.6861006570512378,
+      "maxRegressionPercent": 20,
+      "baseRoundsMs": [
+        0.20091999999999643,
+        0.19100499999967724
+      ],
+      "headRoundsMs": [
+        0.20075299999962226,
+        0.19386100000019724
+      ],
+      "rangesSeparated": false
+    },
+    "r2/node/list-100": {
+      "status": "passed",
+      "baseMedianMs": 7.679205749999937,
+      "headMedianMs": 7.627962000000025,
+      "changePercent": -0.6673053394866095,
+      "maxRegressionPercent": 10,
+      "baseRoundsMs": [
+        7.620385999999598,
+        7.738025500000276
+      ],
+      "headRoundsMs": [
+        7.715127000000393,
+        7.540796999999657
+      ],
+      "rangesSeparated": false
+    },
+    "r2/node/put-1-kib": {
+      "status": "passed",
+      "baseMedianMs": 0.7272519999999076,
+      "headMedianMs": 0.679271999999969,
+      "changePercent": -6.597438026976168,
+      "maxRegressionPercent": 20,
+      "baseRoundsMs": [
+        0.6776559999998426,
+        0.7768479999999727
+      ],
+      "headRoundsMs": [
+        0.6460849999998572,
+        0.7124590000000808
+      ],
+      "rangesSeparated": false
+    }
+  }
+}
